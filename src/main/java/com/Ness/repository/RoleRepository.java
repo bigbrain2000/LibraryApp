@@ -1,9 +1,10 @@
 package com.Ness.repository;
 
-import com.Ness.model.Book;
+import com.Ness.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookRepository extends JpaRepository<Book, Long> {
+public interface RoleRepository extends JpaRepository<Role, Integer> {
+
 }
