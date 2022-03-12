@@ -2,14 +2,16 @@ package com.Ness.service;
 
 import com.Ness.model.Book;
 import com.Ness.repository.BookRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class BookServiceImpl {
+@Service
+public class BookService {
 
     private final BookRepository bookRepository;
 
-    public BookServiceImpl(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
