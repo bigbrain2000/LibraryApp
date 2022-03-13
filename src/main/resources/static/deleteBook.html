@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>View books</title>
+    <title>Delete book</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/navBarStyle.css">
     <link rel="stylesheet" type="text/css" href="css/booksTableStyle.css">
+
 </head>
 
 <body>
@@ -40,22 +42,28 @@
     </a>
 </div>
 
-<div >
+<div>
     <table id="bookTable">
-        <thead >
+        <thead>
         <tr>
             <th>Book author</th>
             <th>Book title</th>
+            <th>Delete action</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="book: ${books}">
+        <tr th:each="book:${books}">
             <td th:text="${book.author}"></td>
             <td th:text="${book.title}"></td>
+            <td>
+                <a th:href="@{/deleteBook/{id}(id=${book.id})}"
+                   class="btn btn-danger">Delete</a>
+            </td>
         </tr>
         </tbody>
     </table>
 </div>
+
 
 <script src="js/navBarScript.js"></script>
 </body>

@@ -2,6 +2,7 @@ package com.Ness.controller;
 
 import com.Ness.model.Book;
 import com.Ness.service.BookService;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,16 +17,14 @@ public class AddBookController {
     private BookService bookService;
 
     @GetMapping("/addBook")
-    public String createStudentForm(Model model) {
-
-        // create student object to hold student form data
+    public String performAddBook(@NotNull Model model) {
         Book book = new Book();
         model.addAttribute("book", book);
         return "../static/addBook";
     }
 
     @PostMapping("/save")
-    public String saveStudent(@ModelAttribute("book") Book book) {
+    public String saveBookIntoDB(@ModelAttribute("book") Book book) {
         bookService.save(book);
         return "../static/index";
     }
