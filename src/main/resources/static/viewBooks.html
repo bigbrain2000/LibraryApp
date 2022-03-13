@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://thymeleaf.org">
 <head>
     <title>View books</title>
     <meta charset="UTF-8">
@@ -32,6 +33,12 @@
     <div class="row active">
         <div class="col-lg-3">
             <a th:href="@{/deleteBook}" class="btn btn-primary btn-sm mb-3">Delete book</a>
+        </div>
+    </div>
+
+    <div class="row active">
+        <div class="col-lg-3">
+            <a th:href="@{/updateBook}" class="btn btn-primary btn-sm mb-3">Update book</a>
         </div>
     </div>
 
