@@ -25,11 +25,6 @@ public class LoginController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @GetMapping("/")
-    public String viewHomePage() {
-        return "/index";
-    }
-
     @GetMapping("/login")
     public String viewLoginPage() {
         try {

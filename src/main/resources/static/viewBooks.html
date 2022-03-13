@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<title>View books</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/navBarStyle.css">
+<link rel="stylesheet" type="text/css" href="css/booksTableStyle.css">
+<head>
+
+</head>
+<body>
+
+<body>
+<div class="topnav" id="myTopnav">
+    <div class="row activ">
+        <div class="col-lg-3">
+            <a th:href="@{/}" class="btn btn-primary btn-sm mb-3">Home</a>
+        </div>
+    </div>
+
+    <div class="row active">
+        <div class="col-lg-3">
+            <a th:href="@{/viewBook}" class="btn btn-primary btn-sm mb-3">View Books</a>
+        </div>
+    </div>
+
+    <div class="row active">
+        <div class="col-lg-3">
+            <a th:href="@{/addBook}" class="btn btn-primary btn-sm mb-3">Add book</a>
+        </div>
+    </div>
+
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<div >
+    <table id="customers">
+        <thead >
+        <tr>
+            <th>Book name</th>
+            <th>Book title</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book: ${books}">
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+
+
