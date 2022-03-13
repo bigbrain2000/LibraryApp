@@ -1,43 +1,36 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org">
 <head>
-    <title>Delete book</title>
     <meta charset="UTF-8">
+    <title>Update book</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/navBarStyle.css">
     <link rel="stylesheet" type="text/css" href="css/booksTableStyle.css">
-
 </head>
-
 <body>
+
 <div class="topnav" id="myTopnav">
     <div class="row activ">
         <div class="col-lg-3">
             <a th:href="@{/}" class="btn btn-primary btn-sm mb-3">Home</a>
         </div>
     </div>
-
     <div class="row active">
         <div class="col-lg-3">
             <a th:href="@{/viewBook}" class="btn btn-primary btn-sm mb-3">View Books</a>
         </div>
     </div>
-
     <div class="row active">
         <div class="col-lg-3">
             <a th:href="@{/addBook}" class="btn btn-primary btn-sm mb-3">Add book</a>
         </div>
     </div>
-
     <div class="row active">
         <div class="col-lg-3">
             <a th:href="@{/deleteBook}" class="btn btn-primary btn-sm mb-3">Delete book</a>
         </div>
     </div>
-
     <div class="row active">
         <div class="col-lg-3">
             <a th:href="@{/updateBook}" class="btn btn-primary btn-sm mb-3">Update book</a>
@@ -48,23 +41,24 @@
         <i class="fa fa-bars"></i>
     </a>
 </div>
+<br>
 
-<div>
+<div >
     <table id="bookTable">
-        <thead>
+        <thead >
         <tr>
             <th>Book author</th>
             <th>Book title</th>
-            <th>Delete action</th>
+            <th>Update action</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="book:${books}">
+        <tr th:each="book: ${books}">
             <td th:text="${book.author}"></td>
             <td th:text="${book.title}"></td>
             <td>
-                <a th:href="@{/deleteBook/{id}(id=${book.id})}"
-                   class="btn btn-danger">Delete</a>
+                <a th:href = "@{/updateBook/edit/{id} (id=${book.id})}"
+                   class = "btn btn-primary">Update</a>
             </td>
         </tr>
         </tbody>
@@ -74,5 +68,3 @@
 <script src="js/navBarScript.js"></script>
 </body>
 </html>
-
-
