@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org">
+<head>
+  <title>Search books</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/navBarStyle.css">
+  <link rel="stylesheet" type="text/css" href="css/booksTableStyle.css">
+</head>
+
+<body>
+<div class="topnav" id="myTopnav">
+  <div class="row activ">
+    <div class="col-lg-3">
+      <a th:href="@{/}" class="btn btn-primary btn-sm mb-3">Home</a>
+    </div>
+  </div>
+
+  <div class="row active">
+    <div class="col-lg-3">
+      <a th:href="@{/viewBook}" class="btn btn-primary btn-sm mb-3">View Books</a>
+    </div>
+  </div>
+
+  <div class="row active">
+    <div class="col-lg-3">
+      <a th:href="@{/addBook}" class="btn btn-primary btn-sm mb-3">Add book</a>
+    </div>
+  </div>
+
+  <div class="row active">
+    <div class="col-lg-3">
+      <a th:href="@{/deleteBook}" class="btn btn-primary btn-sm mb-3">Delete book</a>
+    </div>
+  </div>
+
+  <div class="row active">
+    <div class="col-lg-3">
+      <a th:href="@{/updateBook}" class="btn btn-primary btn-sm mb-3">Update book</a>
+    </div>
+  </div>
+
+  <div class="row active">
+    <div class="col-lg-3">
+      <a th:href="@{/searchBook}" class="btn btn-primary btn-sm mb-3">Search book</a>
+    </div>
+  </div>
+
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div>
+
+  <form th:action="@{/searchBook}" method="get" style=" margin-top: 5%;
+    margin-left: 25%;">
+    <h2>Search a book by title</h2>
+    <input id="txtSearch" type="text" name="keyword">
+    <button type="submit">Search</button>
+  </form>
+  <table id="bookTable">
+    <thead >
+    <tr>
+      <th>Book author</th>
+      <th>Book title</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book: ${books}">
+      <td th:text="${book.author}"></td>
+      <td th:text="${book.title}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="js/navBarScript.js"></script>
+</body>
+</html>
+
+
