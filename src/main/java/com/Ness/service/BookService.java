@@ -34,4 +34,8 @@ public class BookService {
     public Book updateBook(Book book) {
         return bookRepository.save(book);
     }
+
+    public List<Book> findByTitle(String keyword) {
+        return bookRepository.findByTittle(keyword);
+    }
 }
