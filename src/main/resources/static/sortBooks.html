@@ -2,7 +2,7 @@
 <html lang="en"
       xmlns:th="http://thymeleaf.org">
 <head>
-    <title>Search books</title>
+    <title>Sort books</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -60,26 +60,22 @@
 </div>
 
 <div>
-    <form th:action="@{/searchBook}" method="get" style=" margin-top: 5%;
-    margin-left: 25%;">
-        <h2>Search a book by title</h2>
-        <label for="txtSearch"></label><input id="txtSearch" type="text" name="keyword">
-        <button type="submit">Search</button>
+    <form  th:action="@{/sortBooks}" method="get">
+        <table id="bookTable">
+            <thead>
+            <tr>
+                <th>Book author</th>
+                <th>Book title</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="book: ${books}">
+                <td th:text="${book.author}"></td>
+                <td th:text="${book.title}"></td>
+            </tr>
+            </tbody>
+        </table>
     </form>
-    <table id="bookTable">
-        <thead>
-        <tr>
-            <th>Book author</th>
-            <th>Book title</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="book: ${books}">
-            <td th:text="${book.author}"></td>
-            <td th:text="${book.title}"></td>
-        </tr>
-        </tbody>
-    </table>
 </div>
 
 <script src="js/navBarScript.js"></script>

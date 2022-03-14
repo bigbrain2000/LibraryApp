@@ -38,4 +38,8 @@ public class BookService {
     public List<Book> findByTitle(String keyword) {
         return bookRepository.findByTittle(keyword);
     }
+
+    public List<Book> sortAscByAuthorAndTitle() {
+        return bookRepository.sortAscByAuthorAndTitle();
+    }
 }
