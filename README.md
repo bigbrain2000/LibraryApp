@@ -6,7 +6,7 @@ This was my first attempt using Spring framework and I tried to fulfill the requ
 
 As database I used [PostgreSQL](https://www.postgresql.org/) .
 
-In order to launch the app you need to replace the credentials from [application.properties](#https://github.com/bigbrain2000/LibraryApp/blob/main/src/main/resources/application.properties) with your correct credential to connect to the PostgreSQL server:
+In order to launch the app you need to replace the credentials from [application.properties](https://github.com/bigbrain2000/LibraryApp/blob/main/src/main/resources/application.properties) with your correct credential to connect to the PostgreSQL server.
 
 
 ### Logging into the application
