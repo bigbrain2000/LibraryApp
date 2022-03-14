@@ -30,7 +30,7 @@ After login, a user can see a navigation bar with buttons that lead to every end
 For example, this is the page where all books from the library are sorted in ascending order:
 
 
-![](src/main/resources/static/images/Sorted books.png)
+![](https://github.com/bigbrain2000/LibraryApp/blob/main/src/main/resources/static/images/Sorted%20books.png)
 
 
 
