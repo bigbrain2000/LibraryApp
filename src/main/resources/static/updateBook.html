@@ -43,15 +43,21 @@
         </div>
     </div>
 
+    <div class="row active">
+        <div class="col-lg-3">
+            <a th:href="@{/sortBooks}" class="btn btn-primary btn-sm mb-3">Sort books</a>
+        </div>
+    </div>
+
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
 </div>
 <br>
 
-<div >
+<div>
     <table id="bookTable">
-        <thead >
+        <thead>
         <tr>
             <th>Book author</th>
             <th>Book title</th>
@@ -63,8 +69,8 @@
             <td th:text="${book.author}"></td>
             <td th:text="${book.title}"></td>
             <td>
-                <a th:href = "@{/updateBook/edit/{id} (id=${book.id})}"
-                   class = "btn btn-primary">Update</a>
+                <a th:href="@{/updateBook/edit/{id} (id=${book.id})}"
+                   class="btn btn-primary">Update</a>
             </td>
         </tr>
         </tbody>
