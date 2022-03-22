@@ -23,7 +23,7 @@ A window like this will appear
 ![](src/main/resources/static/images/Login.png)
 
 
-I adapted the login template based on my needs,the original template can be found [here](#https://colorlib.com/wp/template/login-form-v16/) .
+I adapted the login template based on my needs,the original template can be found [here](https://colorlib.com/wp/template/login-form-v16/) .
 
 
 After login, a user can see a navigation bar with buttons that lead to every endpoint requested in tasks.
